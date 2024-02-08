@@ -7,9 +7,9 @@ describe('Test Suite', () => {
     cy.visit(url);
     cy.fixture('user').then(function(data){
       this.data=data
-  }) 
+      }) 
 
- })
+  })
 
 
   it('Add to cart from category-product detail page',function(){  
@@ -49,12 +49,12 @@ describe('Test Suite', () => {
 
    cy.contains('Continue').should('be.visible').click() 
   
-cy.get('input[name="account"]')
+  cy.get('input[name="account"]')
      .should('have.attr', 'placeholder', 'Phone Number/Email') 
      .wait(500)
      .type('9860271190d')
   
- cy.get('input[name="password"]')
+  cy.get('input[name="password"]')
      .should('have.attr', 'placeholder', 'Password')
      .type('123456@aA') 
      .type('{enter}')
@@ -79,14 +79,14 @@ cy.get('input[name="account"]')
      }  
 
  // merge/remove flow 
-/*
+ /*
      if( cy.contains('You already have items. Do you want to delete your previous items?') )
        {
              cy.contains(' Pick Up').click()
             } 
 
     else{
-// select pickup flow 
+ // select pickup flow 
      cy.wait(500)
     // cy.contains('Remove').should('contain.text','Remove').click() 
     cy.contains('Merge').should('contain.text','Merge').click() 
@@ -94,9 +94,9 @@ cy.get('input[name="account"]')
     } 
 
 
-cy.contains('You already have items. Do you want to delete your previous items?')
-.its('length')
-.then((length) => {
+ cy.contains('You already have items. Do you want to delete your previous items?')
+ .its('length')
+ .then((length) => {
   if (length !== 0) {
     
     cy.wait(500);
@@ -105,12 +105,12 @@ cy.contains('You already have items. Do you want to delete your previous items?'
   else {
     cy.contains('Pick Up').click(); 
   }
-}) 
-*/ 
+ }) 
+ */ 
 
-// checkout page 
+ // checkout page 
 
-cy.contains('Pick Up').click()
+ cy.contains('Pick Up').click()
 
 
 
@@ -119,7 +119,7 @@ cy.contains('Pick Up').click()
  cy.wait(2000)
  cy.contains('Next').should('be.enabled').click({multiple:true})   
 
-//  order  with prefilled time 
+ //  order  with prefilled time 
  cy.wait(500) 
 
  cy.contains('Others').click()  
@@ -148,9 +148,9 @@ cy.contains('Pick Up').click()
  
  }) 
 
-}) 
-/*
-after(() => {
+ }) 
+ /*
+ after(() => {
   cy.scrollTo(500,0) 
   cy.wait(3000)
   cy.contains('TOTAL PRICE').should('be.visible').click() 
@@ -161,5 +161,5 @@ after(() => {
 
   cy.contains('Clear Shopping Cart').click()
   //cy.get('[data-cy="Clear Shopping Cart"]').click()
-}) 
-*/
+ }) 
+ */
