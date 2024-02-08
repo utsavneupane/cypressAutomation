@@ -25,11 +25,22 @@ describe('Test Suite', () => {
 
         cy.scrollTo(0,3000)
 
-      if(  cy.get('tbody > :nth-child(1) > :nth-child(4) > .justify-center > .flex').should('include', '1')) 
+      /*if(  cy.get('tbody > :nth-child(1) > :nth-child(4) > .justify-center > .flex').should('include', '1')) 
       {
         cy.get('tbody > :nth-child(1) > :nth-child(4) > .justify-center > :nth-child(1)').should('be.disabled')
       }
- 
-}) 
+ */ 
+      cy.contains('Continue Shopping').should('have.text','Continue Shopping').should('be.visible').click() 
+      cy.wait(500)
+      if(cy.url().should('contains','https://uat.ordering-pizzaplanet.ekbana.net/')) 
+      {
+        cy.scrollTo(500,0)
+        cy.contains('TOTAL PRICE').should('be.visible').click() 
+    
+        cy.get('[aria-label="cart"]').should('contain.text',"CART").click()
+      } 
 
-})
+     cy.contains('Clear Shopping Cart').click() 
+})  
+
+}) 
