@@ -40,7 +40,10 @@ describe('Test Suite', () => {
         cy.get('[aria-label="cart"]').should('contain.text',"CART").click()
       } 
 
-     cy.contains('Clear Shopping Cart').click() 
+     cy.contains('Clear Shopping Cart').click()  
+     
+     cy.wait(300)
+     cy.contains('Continue Shopping').click()
 })  
 
 }) 
