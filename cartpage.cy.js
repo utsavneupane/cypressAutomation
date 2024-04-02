@@ -43,7 +43,15 @@ describe('Test Suite', () => {
      cy.contains('Clear Shopping Cart').click()  
      
      cy.wait(300)
-     cy.contains('Continue Shopping').click()
+     cy.contains('Continue Shopping').click() 
+cy.wait(4000)
+let i;
+
+// cy.scrollTo(0,9500)
+for(i=0;i<=5;i++){
+  cy.contains('Add to Cart').click()
+}    
+
 })  
 
 }) 
